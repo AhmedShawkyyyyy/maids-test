@@ -20,11 +20,8 @@ export class HeaderComponent {
   @ViewChild('searchInput') searchInputElement!: ElementRef<HTMLInputElement>;
 
   onSearchTextChange() {
-    const inputValue = +this.searchInputElement.nativeElement.value; // Convert input value to number
-    this.searchText = isNaN(inputValue) ? 0 : inputValue; // If input value is not a number, set it to 0
+    const inputValue = +this.searchInputElement.nativeElement.value;
+    this.searchText = isNaN(inputValue) ? 0 : inputValue;
     this.searchTextChange.emit(this.searchText);
-    // this.searchText = this.searchInputElement.nativeElement.value;
-    // this.searchTextChange.emit(this.searchText);
-    // console.log(`this is search value from header ${this.searchText}`);
   }
 }

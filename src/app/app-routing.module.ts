@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './userPanel/home/home.component';
 import { UsersDetailsComponent } from './userPanel/home/usersDetails/usersDetails.component';
+import { Error404Component } from './userPanel/error404/error404.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
     title: 'Maids | User Details',
     component: UsersDetailsComponent,
   },
+  { path: '**', title: '404 page not found', component: Error404Component },
 ];
 
 @NgModule({

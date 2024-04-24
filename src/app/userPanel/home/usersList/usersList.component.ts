@@ -26,7 +26,7 @@ export class UsersListComponent implements OnInit {
     // console.log(this.searchText);
     this.toastr.info(`Welcome aboard!`, '', {
       timeOut: 2500,
-      positionClass: 'toast-top-center',
+      positionClass: 'toast-top-right',
       progressBar: true,
       progressAnimation: 'decreasing',
     });
@@ -47,7 +47,7 @@ export class UsersListComponent implements OnInit {
           this.loader.hideLoader();
         }
       });
-    }, 5);
+    }, 2000);
   }
   // =============================
 
