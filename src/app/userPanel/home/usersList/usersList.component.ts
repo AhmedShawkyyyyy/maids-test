@@ -26,7 +26,7 @@ export class UsersListComponent implements OnInit {
     // console.log(this.searchText);
     this.toastr.info(`Welcome aboard!`, '', {
       timeOut: 2500,
-      positionClass: 'toast-top-right',
+      positionClass: 'toast-top-center',
       progressBar: true,
       progressAnimation: 'decreasing',
     });
