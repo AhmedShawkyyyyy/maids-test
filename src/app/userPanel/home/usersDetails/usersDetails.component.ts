@@ -8,7 +8,7 @@ import { UsersApiServicesService } from '../../controllers/Users-Api-Services.se
   styleUrls: ['./usersDetails.component.css'],
 })
 export class UsersDetailsComponent implements OnInit {
-  users: any[] = []; // Assuming user is an object
+  users: any[] = [];
   id: any;
 
   constructor(
@@ -18,10 +18,8 @@ export class UsersDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // initiate  the user info
     this.getUserInfo();
   }
-  // build the user info method to call data from API
 
   getUserInfo() {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
