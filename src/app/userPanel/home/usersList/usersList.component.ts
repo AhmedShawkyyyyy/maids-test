@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UsersApiServicesService } from '../../controllers/Users-Api-Services.service';
 import { user } from '../../model/user';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'usersList',
@@ -18,10 +19,17 @@ export class UsersListComponent implements OnInit {
   constructor(
     private api: UsersApiServicesService,
     private router: Router,
-    private loader: LoaderService
+    private loader: LoaderService,
+    private toastr: ToastrService
   ) {
     this.getAllUsers();
-    console.log(this.searchText);
+    // console.log(this.searchText);
+    this.toastr.info(`Welcome aboard!`, '', {
+      timeOut: 2500,
+      positionClass: 'toast-top-right',
+      progressBar: true,
+      progressAnimation: 'decreasing',
+    });
   }
 
   ngOnInit() {
@@ -35,11 +43,11 @@ export class UsersListComponent implements OnInit {
       this.api.get().subscribe((data: any) => {
         if (data && data.data && Array.isArray(data.data)) {
           this.users = data.data;
-          console.log(this.users);
+          // console.log(this.users);
           this.loader.hideLoader();
         }
       });
-    }, 2000);
+    }, 5);
   }
   // =============================
 

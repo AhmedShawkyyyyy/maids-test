@@ -3,10 +3,11 @@
 </div>
 <div class="container mt-5">
   <div class=" row">
-    <div class="col-12 d-flex flex-wrap justify-content-between">
-      <div class="col-lg-3 col-md-5 col-sm-12 m-1" *ngFor="let user of users">
-        <div class="card " style="width: 20rem;" id="card" *ngIf="(searchText===0 )|| user.id === searchText">
-          <h5 class="" id="card-title mt-1 ms-1">User Info</h5>
+    <div class="col-12 d-flex flex-wrap justify-content-center align-items-center">
+      <div class="col-lg-3 col-md-6 col-sm-12 m-3" *ngFor="let user of users" appHover>
+        <div class="card " style="width: 20rem;" id="card" *ngIf="(searchText===0 )|| user.id === searchText"
+          animate__zoomIn>
+          <h5 class="" id="card-title mt-1 ms-1" [ngStyle]="{color:'var(--primary)'}">User Info</h5>
           <img [src]="user.avatar" class="card-img-top" alt="..." id="userImage">
           <div class="card-body">
 
