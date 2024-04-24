@@ -1,0 +1,18 @@
+.navbar {
+  background: var(--secondary) !important;
+}
+.navbar .nav-link {
+  color: var(--light);
+}
+.navbar .navbar-brand {
+  color: var(--light);
+}
+
+#search {
+  background: var(--dark) !important;
+  color: var(--light);
+  border-color: var(--secondary);
+}
+#search::placeholder {
+  color: var(--light);
+}
